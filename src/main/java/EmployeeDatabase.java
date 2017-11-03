@@ -10,14 +10,24 @@ public class EmployeeDatabase {
 
     public List<Employee> employees;
 
+    Employee findManager(Employee employee){
+        Employee manager;
+        for(int i=0;i<employees.size();i++){
+            if (employees[i].getName() == employee.getManager()){
+                manager = employees[i];
+                break;
+            }
+        }
+        return manager;
+    }
+
     /**
      * Count the number of managers above this employee
      * 
      * @param employeeName name of the employee
      * @return int
      */
-
-    public int countManagersAbove(final String employeeName) {
+    public int countManagersAbove(final Employee employee) {
         /*
          * Implement this function
          */
@@ -29,8 +39,7 @@ public class EmployeeDatabase {
      * @param employeeName name of the employee
      * @return int
      */
-
-    public int countEmployeesUnder(final String employeeName) {
+    public int countEmployeesUnder(final Employee employee) {
         /*
          * Implement this function
          */
@@ -46,42 +55,51 @@ public class EmployeeDatabase {
     public static void main(final String[] unused) {
 
         employees = new ArrayList<Employee>();
-        employees.add(new Employee("Betty", "Sam"));
-        employees.add(new Employee("Bob", "Sally"));
-        employees.add(new Employee("Dilbert", "Nathan"));
-        employees.add(new Employee("Joseph", "Sally"));
-        employees.add(new Employee("Nathan", "Veronica"));
-        employees.add(new Employee("Sally", "Veronica"));
-        employees.add(new Employee("Sam", "Joseph"));
-        employees.add(new Employee("Susan", "Bob"));
-        employees.add(new Employee("Veronica", ""));
+        Employee betty = new Employee("Betty", "Sam");
+        employees.add(betty);
+        Employee bob = new Employee("Bob", "Sally");
+        employees.add(bob);
+        Employee dilbert = new Employee("Dilbert", "Nathan");
+        employees.add(dilbert);
+        Employee joseph = new Employee("Joseph", "Sally");
+        employees.add(joseph);
+        Employee nathan = new Employee("Nathan", "Veronica");
+        employees.add(nathan);
+        Employee sally = new Employee("Sally", "Veronica");
+        employees.add(sally);
+        Employee sam = new Employee("Sam", "Joseph");
+        employees.add(sam);
+        Employee susan = new Employee("Susan", "Bob");
+        employees.add(susan);
+        Employee veronica = new Employee("Veronica", "");
+        employees.add(veronica);
 
         System.out.println("Welcome to the employee database\n\n");
 
         // Count employees under
-        int answer = countEmployeesUnder("Sally");
+        int answer = countEmployeesUnder(sally);
         System.out.println("Sally has " + Integer.toString(answer) + " employees under her.\n");
 
-        answer = countEmployeesUnder("Nathan");
+        answer = countEmployeesUnder(nathan);
         System.out.println("Nathan has " + Integer.toString(answer) + " employees under him.\n");
 
-        answer = countEmployeesUnder("Betty");
+        answer = countEmployeesUnder(betty);
         System.out.println("Betty has " + Integer.toString(answer) + " employees under her.\n");
 
-        answer = countEmployeesUnder("Veronica");
+        answer = countEmployeesUnder(veronica);
         System.out.println("Veronica has " + Integer.toString(answer) + " employees under her.\n");
 
         // Count managers above
-        answer = countManagersAbove("Sally");
+        answer = countManagersAbove(sally);
         System.out.println("Sally has " + Integer.toString(answer) + " managers above her.\n");
 
-        answer = countManagersAbove("Veronica");
+        answer = countManagersAbove(veronica);
         System.out.println("Veronica has " + Integer.toString(answer) + " managers above her.\n");
 
-        answer = countManagersAbove("Bob");
+        answer = countManagersAbove(bob);
         System.out.println("Bob has " + Integer.toString(answer) + " managers above him.\n");
 
-        answer = countManagersAbove("Betty");
+        answer = countManagersAbove(betty);
         System.out.println("Betty has " + Integer.toString(answer) + " managers above her.\n");
     }
 }
