@@ -9,7 +9,6 @@
 public class EmployeeDatabase {
 
     public List<Employee> employees;
-    public List<String> employeeNames;
 
     /**
      * Count the number of managers above this employee
@@ -18,7 +17,7 @@ public class EmployeeDatabase {
      * @return int
      */
 
-    public int countManagersAbove(final Employee employeeName) {
+    public int countManagersAbove(final String employeeName) {
         /*
          * Implement this function
          */
@@ -31,7 +30,7 @@ public class EmployeeDatabase {
      * @return int
      */
 
-    public int countEmployeesUnder(final Employee employeeName) {
+    public int countEmployeesUnder(final String employeeName) {
         /*
          * Implement this function
          */
@@ -56,17 +55,6 @@ public class EmployeeDatabase {
         employees.add(new Employee("Sam", "Joseph"));
         employees.add(new Employee("Susan", "Bob"));
         employees.add(new Employee("Veronica", ""));
-        
-        employeeNames = new ArrayList<String>();
-        employeeNames.add("Dilbert");
-        employeeNames.add("Nathan");
-        employeeNames.add("Veronica");
-        employeeNames.add("Sally");
-        employeeNames.add("Bob");
-        employeeNames.add("Joseph");
-        employeeNames.add("Susan");
-        employeeNames.add("Sam");
-        employeeNames.add("Betty");
 
         System.out.println("Welcome to the employee database\n\n");
 
