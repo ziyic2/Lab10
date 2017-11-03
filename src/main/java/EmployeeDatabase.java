@@ -1,20 +1,40 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Implement an EmployeeDatabase class.
  * <p>
- * In this lab we will model some functions of an employee database. We have two classes: EmployeeDatabase and Employee. You only need to finish
- * functions in this class, however you would have to refer to the functions in the other class as well. Also, fix checkstyle errors
+ * In this lab we will model some functions of an employee database. We have two classes:
+ * EmployeeDatabase and Employee. You only need to finish functions in this class,
+ * however you would have to refer to the functions in the other class as well.
+ * Also, fix checkstyle errors
  *
  * @see <a href="https://cs125.cs.illinois.edu/lab/10/">Lab 10 Description</a>
  */
 public class EmployeeDatabase {
 
+    /**
+     * List of employees.
+     */
     public List<Employee> employees;
 
-    Employee findManager(Employee employee){
-        Employee manager;
-        for(int i=0;i<employees.size();i++){
-            if (employees[i].getName() == employee.getManager()){
-                manager = employees[i];
+    /**
+     * Constructor which initializes the employees list.
+     */
+    public EmployeeDatabase() {
+        employees = new ArrayList<Employee>();
+    }
+
+    /**
+     * Returns the Manager object for the employee.
+     * @param employee
+     * @return
+     */
+    Employee findManager(final Employee employee) {
+        Employee manager = null;
+        for (int i = 0; i < employees.size(); i++) {
+            if (employees.get(i).getName() == employee.getManager()) {
+                manager = employees.get(i);
                 break;
             }
         }
@@ -22,9 +42,9 @@ public class EmployeeDatabase {
     }
 
     /**
-     * Count the number of managers above this employee
-     * 
-     * @param employeeName name of the employee
+     * Count the number of managers above this employee.
+     *
+     * @param employee name of the employee
      * @return int
      */
     public int countManagersAbove(final Employee employee) {
@@ -36,7 +56,7 @@ public class EmployeeDatabase {
     /**
      * Count the number of managers above this employee.
      *
-     * @param employeeName name of the employee
+     * @param employee name of the employee
      * @return int
      */
     public int countEmployeesUnder(final Employee employee) {
@@ -54,52 +74,53 @@ public class EmployeeDatabase {
     @SuppressWarnings("checkstyle:magicnumber")
     public static void main(final String[] unused) {
 
-        employees = new ArrayList<Employee>();
+        EmployeeDatabase database = new EmployeeDatabase();
+
         Employee betty = new Employee("Betty", "Sam");
-        employees.add(betty);
+        database.employees.add(betty);
         Employee bob = new Employee("Bob", "Sally");
-        employees.add(bob);
+        database.employees.add(bob);
         Employee dilbert = new Employee("Dilbert", "Nathan");
-        employees.add(dilbert);
+        database.employees.add(dilbert);
         Employee joseph = new Employee("Joseph", "Sally");
-        employees.add(joseph);
+        database.employees.add(joseph);
         Employee nathan = new Employee("Nathan", "Veronica");
-        employees.add(nathan);
+        database.employees.add(nathan);
         Employee sally = new Employee("Sally", "Veronica");
-        employees.add(sally);
+        database.employees.add(sally);
         Employee sam = new Employee("Sam", "Joseph");
-        employees.add(sam);
+        database.employees.add(sam);
         Employee susan = new Employee("Susan", "Bob");
-        employees.add(susan);
+        database.employees.add(susan);
         Employee veronica = new Employee("Veronica", "");
-        employees.add(veronica);
+        database.employees.add(veronica);
 
         System.out.println("Welcome to the employee database\n\n");
 
         // Count employees under
-        int answer = countEmployeesUnder(sally);
+        int answer = database.countEmployeesUnder(sally);
         System.out.println("Sally has " + Integer.toString(answer) + " employees under her.\n");
 
-        answer = countEmployeesUnder(nathan);
+        answer = database.countEmployeesUnder(nathan);
         System.out.println("Nathan has " + Integer.toString(answer) + " employees under him.\n");
 
-        answer = countEmployeesUnder(betty);
+        answer = database.countEmployeesUnder(betty);
         System.out.println("Betty has " + Integer.toString(answer) + " employees under her.\n");
 
-        answer = countEmployeesUnder(veronica);
+        answer = database.countEmployeesUnder(veronica);
         System.out.println("Veronica has " + Integer.toString(answer) + " employees under her.\n");
 
         // Count managers above
-        answer = countManagersAbove(sally);
+        answer = database.countManagersAbove(sally);
         System.out.println("Sally has " + Integer.toString(answer) + " managers above her.\n");
 
-        answer = countManagersAbove(veronica);
+        answer = database.countManagersAbove(veronica);
         System.out.println("Veronica has " + Integer.toString(answer) + " managers above her.\n");
 
-        answer = countManagersAbove(bob);
+        answer = database.countManagersAbove(bob);
         System.out.println("Bob has " + Integer.toString(answer) + " managers above him.\n");
 
-        answer = countManagersAbove(betty);
+        answer = database.countManagersAbove(betty);
         System.out.println("Betty has " + Integer.toString(answer) + " managers above her.\n");
     }
 }
