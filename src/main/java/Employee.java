@@ -1,6 +1,5 @@
 /**
  * Class implementing an employee.
- * <p>
  *
  * @see <a href="https://cs125.cs.illinois.edu/lab/10/">Lab 10 Description</a>
  */
