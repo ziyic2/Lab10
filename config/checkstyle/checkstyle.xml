@@ -33,7 +33,7 @@
 <!--
   Configuration customized for CS125.
   * Semi-permanent customizations marked with CS125.
-  * Per-project customizations (if any) marked with Lab5.
+  * Per-project customizations (if any) marked with Lab10.
  -->
 
 <module name="Checker">

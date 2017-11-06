@@ -2,12 +2,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Implement an EmployeeDatabase class.
+ * A class that implements a database of employees.
  * <p>
- * In this lab we will model some functions of an employee database. We have two classes:
- * EmployeeDatabase and Employee. You only need to finish functions in this class,
- * however you would have to refer to the functions in the other class as well.
- * Also, fix checkstyle errors
+ * This class models some functions of an employee database. We have two classes: EmployeeDatabase
+ * and Employee. You only need to finish functions in this class, however you would have to refer to
+ * the functions in the other class as well. And, of course, fix the checkstyle errors.
  *
  * @see <a href="https://cs125.cs.illinois.edu/lab/10/">Lab 10 Description</a>
  */
@@ -20,6 +19,9 @@ public class EmployeeDatabase {
 
     /**
      * Constructor which initializes the employees list.
+     * <p>
+     * We suggest that you investigate the ArrayList class, which is one of the more useful built-in
+     * data structures in Java.
      */
     public EmployeeDatabase() {
         employees = new ArrayList<Employee>();
@@ -27,6 +29,7 @@ public class EmployeeDatabase {
 
     /**
      * Returns the Manager object for the employee.
+     *
      * @param employee
      * @return
      */
@@ -43,6 +46,8 @@ public class EmployeeDatabase {
 
     /**
      * Count the number of managers above this employee.
+     * <p>
+     * Consider both a recursive and an iterative solution to this problem.
      *
      * @param employee name of the employee
      * @return int
@@ -54,7 +59,9 @@ public class EmployeeDatabase {
     }
 
     /**
-     * Count the number of managers above this employee.
+     * Count the number of employees under this manager.
+     * <p>
+     * Consider both a recursive and an iterative solution to this problem.
      *
      * @param employee name of the employee
      * @return int
@@ -65,9 +72,10 @@ public class EmployeeDatabase {
          */
     }
 
-
     /**
-     * Main method for testing. Do not modify
+     * Main method for testing.
+     * <p>
+     * You should understand, but do not need to modify, this function.
      *
      * @param unused unused input arguments
      */
