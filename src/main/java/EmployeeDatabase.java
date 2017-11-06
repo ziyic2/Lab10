@@ -28,7 +28,7 @@ public class EmployeeDatabase {
     }
 
     /**
-     * Returns the Manager object for the employee.
+     * Returns the manager for the given employee.
      *
      * @param employee
      * @return
