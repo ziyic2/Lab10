@@ -1,7 +1,7 @@
 /**
  * Class implementing an employee.
  *
- * @see <a href="https://cs125.cs.illinois.edu/lab/10/">Lab 10 Description</a>
+ * @see <a href="https://cs125.cs.illinois.edu/lab/10/">Lab 10 Description</a> 
  */
 public class Employee {
 
